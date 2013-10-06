@@ -2,7 +2,7 @@
 
 <tiles-definitions>
 
-	<definition name="test" template="/WEB-INF/tiles/jsp/template.jsp">
+	<definition name="index" template="/WEB-INF/tiles/jsp/index.jsp">
 	</definition>
 
 </tiles-definitions>
