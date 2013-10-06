@@ -3,111 +3,25 @@
 
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
-  <!-- Log levels are (more verbose to less verbose):
-         TRACE, DEBUG, INFO, WARN, ERROR, FATAL -->
+	<!-- Log levels are (more verbose to less verbose): TRACE, DEBUG, INFO, 
+		WARN, ERROR, FATAL -->
 
-  <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
-    <layout class="org.apache.log4j.PatternLayout">
-    <param name="ConversionPattern" value="%-5p %d{DATE}:[%t:%c{1}][%x] %m %n" />
-    </layout>
-  </appender>
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p %d{DATE}:[%t:%c{1}][%x] %m %n" />
+		</layout>
+	</appender>
 
-  <appender name="FILE" class="org.apache.log4j.rolling.RollingFileAppender">
-    <param name="Append" value="true"/>
-    <param name="Threshold" value="DEBUG"/>
-    <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
-      <param name="FileNamePattern" value="${catalina.base}/logs/batchruns.log.%d{yyyy-MM-dd}.gz"/>
-      <param name="ActiveFileName" value="${catalina.base}/logs/batchruns.log"/>
-    </rollingPolicy>
-    <layout class="org.apache.log4j.EnhancedPatternLayout">
-       <param name="ConversionPattern" value="%d{ISO8601} %-5p [%c{3}] (%t:%x) %m%n"/>
-    </layout>
-  </appender>
-
-  <appender name="EVENTS" class="org.apache.log4j.rolling.RollingFileAppender">
-    <param name="Append" value="true"/>
-    <param name="Threshold" value="DEBUG"/>
-    <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
-      <param name="FileNamePattern" value="${catalina.base}/logs/events.log.%d{yyyy-MM-dd}.gz"/>
-      <param name="ActiveFileName" value="${catalina.base}/logs/events.log"/>
-    </rollingPolicy>
-    <layout class="org.apache.log4j.EnhancedPatternLayout">
-       <param name="ConversionPattern" value="%d{ISO8601} %-5p [%c{3}] (%t:%x) %m%n"/>
-    </layout>
-  </appender>
-
-  
-<!-- 
-  <logger name="net.sf.ehcache">
-    <level value="ERROR" />
-  </logger>
- -->
-
-  <logger name="org.springframework.security">
-    <level value="INFO" />
-  </logger>
-
-  <logger name="org.apache">
-    <level value="WARN" />
-  </logger>
-
-  <logger name="org.apache.tiles">
-    <level value="INFO" />
-  </logger>
-
-  <logger name="org.apache.commons.digester">
-    <level value="WARN" />
-  </logger>
-
-  <logger name="org.apache.commons.httpclient">
-    <level value="WARN" />
-  </logger>
-
-  <logger name="httpclient">
-    <level value="WARN" />
-  </logger>
-
-  <logger name="org.hibernate">
-    <level value="WARN" />
-  </logger>
-
-  <logger name="org.hibernate.SQL">
-    <level value="INFO" />
-  </logger>
-
-  <logger name="org.springframework">
-    <level value="WARN" />
-  </logger>
-
-  <logger name="org.springframework.web.servlet.DispatcherServlet">
-    <level value="TRACE" />
-  </logger>
-  
-  <logger name="org.springframework.test.context.junit4.SpringJUnit4ClassRunner">
-    <level value="DEBUG" />
-  </logger>
-  
-  <logger name="org.springframework.scheduling">
-    <level value="WARN" />
-  </logger>
-  
-  <logger name="org.quartz">
-    <level value="WARN" />
-  </logger>
-    
-  <!-- Suppress warnings from Commons Validator -->
-  <logger name="org.apache.commons.validator.ValidatorResources">
-    <level value="ERROR" />
-  </logger>
-
-  
-  <logger name="org.jasig">
-    <level value="TRACE" />
-  </logger>
-
-  <root>
-    <level value="WARN" />
-    <appender-ref ref="CONSOLE" />
-  </root>
+	<logger name="org">
+		<level value="TRACE" />
+	</logger>
+	<logger name="org.springframework.web.servlet.DispatcherServlet">
+		<level value="TRACE" />
+	</logger>
+	
+	<root>
+		<level value="TRACE" />
+		<appender-ref ref="CONSOLE" />
+	</root>
 
 </log4j:configuration>
